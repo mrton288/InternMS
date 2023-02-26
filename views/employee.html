@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Misa</title>
+    <link rel="stylesheet" href="/css/container.css">
+</head>
+
+<body>
+
+    <!-- Dialog warning -->
+    <div class="dialog__exit-employeeCode">
+        <div class="warning">
+            <div class="icon-warning"></div>
+            <p class="dialog-text">Mã nhân viên &ltNV-0001&gt đã tồn tại trong
+                hệ thống, vui lòng kiểm tra lại</p>
+        </div>
+        <div class="dialog-line"></div>
+        <input type="button" value="Đồng ý" class="btn-yes">
+    </div>
+
+    <!-- Option edit -->
+    <div class="edit__option hide" id="edit__option">
+        <li class="option__line">
+            <a>Nhân bản</a>
+        </li>
+        <li class="option__line" id="deleteRow">
+            <a> Xoá</a>
+        </li>
+        <li class="option__line">
+            <a>Ngừng sử dụng</a>
+        </li>
+    </div>
+
+    <div class="feature__edit"></div>
+
+    <!-- Popup -->
+    <div class="popup__model" id="form__detail" hidden>
+        <div class="popup">
+            <!-- popup Header -->
+            <!-- <div class="popup__content"> -->
+            <div class="flex">
+                <div class="popup__title"></div>
+                <div class="flex">
+                    <div class="popup__object">
+                        <div class="checkbox cbOther">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                        <div class="object__employee ml-12">Là khách hàng</div>
+                    </div>
+                    <div class="popup__object">
+                        <div class="checkbox cbOther">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                        <div class="object__producter ml-12">Là nhà cung cấp
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup__exit" id="btnCancel"
+                onclick="onCloseFormDetail()" title="Đóng (ESC)">
+            </div>
+            <div class="popup__help" title="Chú thích"></div>
+
+            <!-- popup Body -->
+            <div class="popup__body m-top">
+                <div class="popup__body-left flex-col">
+                    <div class="flex-row gap-8">
+                        <div class="popup__body-code flex-col">
+                            <label for="">Mã <span
+                                    class="color-red">*</span></label>
+                            <input class="popup__input input--required"
+                                type="text" id="txtEmployeeCode" tabindex="1"
+                                value="NV-0001">
+                        </div>
+                        <div class="popup__body-name flex-col">
+                            <label for="">Tên <span
+                                    class="color-red">*</span></label>
+                            <input class="popup__input input--required"
+                                type="text" id="txtEmployeeName" tabindex="2">
+                        </div>
+                    </div>
+
+                    <div class="popup__body-unit flex-col">
+                        <label for="">Đơn vị<span class="color-red">
+                                *</span></label>
+                        <div class="dropdown" tabindex="3">
+                            <div id="dropdown__select1">
+                                <div class="selected" id="txtDepartment">Phòng
+                                    nhân sự
+                                </div>
+                            </div>
+                            <ul class="menuDd1 hide" id="menuDropdown1">
+                                <li class="option1">Phòng nhân sự
+                                </li>
+                                <li class="option1">Phòng Công Nghệ Thông Tin
+                                </li>
+                                <li class="option1">Phòng Hành Chính
+                                </li>
+                                <li class="option1">Phòng Kế Toán
+                                </li>
+                            </ul>
+                            <div class="bgc-arrowdown" id="active1">
+                                <img id="paging__arrowdown1"
+                                    src="/assets/img/downarrow.png"></img>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-col">
+                        <label for="">Chức danh</label>
+                        <input class="popup__input" type="text" id=""
+                            tabindex="4">
+                    </div>
+                </div>
+
+                <div class="popup__body-right">
+                    <div class="flex-row gap-8">
+                        <div class="popup__body-dob flex-col">
+                            <label for="">Ngày sinh</label>
+                            <input class="popup__input " type="date"
+                                id="dateOfBirth" tabindex="6">
+                        </div>
+                        <div class="flex-col popup__body-gender">
+                            <label for="">Giới tính</label>
+                            <!-- <div class="flex align-item"> -->
+                            <div class="popup__gender flex-row">
+                                <label class="radio">
+                                    <input type="radio" name="gender"
+                                        value="male">Nam
+                                    <span tabindex="7"></span>
+                                </label>
+
+                                <label class="radio">
+                                    <input type="radio" name="gender"
+                                        value="female">Nữ
+                                    <span tabindex="8"></span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="gender"
+                                        value="other">Khác
+                                    <span tabindex="9"></span>
+                                </label>
+
+                            </div>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+
+                    <div class="flex-row gap-8">
+                        <div class="popup__body-cmnd flex-col">
+                            <label for="" title="Số chứng minh nhân dân">Số
+                                CMND</label>
+                            <input class="popup__input" type="text"
+                                id="txtIdentityCard" tabindex="10">
+                        </div>
+
+                        <div class="popup__body-dateRange flex-col">
+                            <label for="">Ngày cấp</label>
+                            <input class="popup__input" type="date"
+                                id="dateRange" tabindex="11">
+                        </div>
+                    </div>
+                    <div class="flex-col popup__body-locateRange">
+                        <label for="">Nơi cấp</label>
+                        <input class="popup__input" type="text" id="txtPosition"
+                            tabindex="12">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="contact-info m-top">
+                <div class="flex-col">
+                    <label for="">Địa chỉ</label>
+                    <input class="popup__input" type="text" id="txtAddress"
+                        tabindex="13">
+                </div>
+
+                <div class="flex-row gap-8">
+                    <div class="flex-col w-26percent">
+                        <label for="" title="Điện thoại di động">ĐT di
+                            động</label>
+                        <input class="popup__input checkNumber" type="text"
+                            id="txtPhoneNumber" tabindex="14">
+                    </div>
+
+                    <div class="flex-col w-26percent">
+                        <label for="" title="Điện thoại cố định">ĐT cố
+                            định</label>
+                        <input class="popup__input checkNumber" type="text"
+                            id="" tabindex="15">
+                    </div>
+
+                    <div class="flex-col w-26percent">
+                        <label for="">Email</label>
+                        <input class="popup__input" type="text" id="txtEmail"
+                            placeholder="example@gmail.com" tabindex="16">
+                    </div>
+                </div>
+
+                <div class="flex-row gap-8">
+                    <div class="flex-col w-26percent">
+                        <label for="">Tài khoản ngân hàng</label>
+                        <input class="popup__input" type="text"
+                            id="checkBankAccount" tabindex="17">
+                    </div>
+
+
+                    <div class="flex-col w-26percent">
+                        <label for="">Tên ngân hàng</label>
+                        <input class="popup__input" type="text" id=""
+                            tabindex="18">
+                    </div>
+
+                    <div class="flex-col w-26percent">
+                        <label for="">Chi nhánh</label>
+                        <input class="popup__input" type="text" id=""
+                            tabindex="19">
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
+
+            <!-- popup footer -->
+            <div class="popup__footer">
+                <div class="btn__store">
+                    <button class="btn__store-sub" tabindex="20">Cất</button>
+                    <button class="btn__store-add" tabindex="21">Cất và
+                        thêm</button>
+                </div>
+                <button class="btn__cancel" tabindex="22">Huỷ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast message -->
+
+    <!-- Toast success -->
+    <div class="toast__success">
+        <div class="toast__left">
+            <div class="toast__icon"></div>
+            <p class="toast__text"><strong class="text-success">Thành Công!
+                </strong>Công việc bị đã bị xoá</p>
+        </div>
+        <div class="toast__right">
+            <div class="toast__additional">Hoàn tác</div>
+            <div class="toast__exit"></div>
+        </div>
+    </div>
+
+    <!-- Toast warning -->
+    <div class="toast__wraning">
+        <div class="toast__left">
+            <div class="toast__icon-warning"></div>
+            <p class="toast__text"><strong class="text-warning">Cảnh báo!
+                </strong>Dữ liệu của bạn đã bị thay đổi bởi người dùng khác</p>
+        </div>
+        <div class="toast__exit"></div>
+    </div>
+
+    <!-- Toast error -->
+    <div class="toast__error">
+        <div class="toast__left">
+            <div class="toast__icon-error"></div>
+            <p class="toast__text-error"><strong class="text-error">Lỗi!
+                </strong>Không thể cập nhật được dữ liệu. Vui lòng kiểm tra lại
+                kết nối internet
+                <br /><span class="toast__additional">Xem hướng dẫn</span>
+            </p>
+        </div>
+        <div class="toast__exit"></div>
+    </div>
+
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Main -->
+        <div class="main">
+            <!-- Header -->
+            <div class="header">
+                <div class="header__left">
+                    <div class="header__left-more"></div>
+                    <p class="header__left-title">
+                        CÔNG TY TNHH SẢN XUẤT - THƯƠNG MẠI - DỊCH QUI PHÚC
+                    </p>
+                    <div class="header__left-arrow-down"></div>
+                </div>
+
+                <div class="header__right">
+                    <div class="header__right-bell" title="Thông báo"></div>
+                    <div class="header__right-user"></div>
+                    <p class="header__right-name">Nguyễn Văn Mạnh</p>
+                    <div class="header__right-arrow-down"></div>
+                </div>
+            </div>
+            <!-- Content -->
+            <div class="content">
+
+                <!-- Content header -->
+                <div class="content__header">
+                    <p class="content__header-title">Nhân viên</p>
+                    <button class="content__header-add">Thêm mới nhân
+                        viên</button>
+                </div>
+
+                <!-- Content body -->
+                <div class="content__body">
+                    <div class="content__body-uptable">
+                        <div class="content__body-search">
+                            <input class="search-text" type="text"
+                                placeholder="Tìm theo mã, tên nhân viên">
+                            <div class="search-icon"></div>
+                        </div>
+                        <div class="content__body-reload"></div>
+                    </div>
+                    <div class="content__body-table">
+                        <table id="tableEmployee">
+                            <thead>
+                                <tr>
+                                    <th class="text__algin-left"
+                                        type="checkbox">
+                                        <div class="checkbox select-all">
+                                            <input type="checkbox"
+                                                id="checkAll">
+                                            <span class="checkmark"></span>
+                                        </div>
+                                    </th>
+                                    <th class="text__algin-left"
+                                        model-name="EmployeeCode">MÃ NHÂN VIÊN
+                                    </th>
+                                    <th class="text__algin-left"
+                                        model-name="FullName">TÊN NHÂN VIÊN
+                                    </th>
+                                    <th class="text__algin-left"
+                                        model-name="Gender">GIỚI TÍNH</th>
+                                    <th class="text__align-center"
+                                        model-name="DateOfBirth">NGÀY SINH
+                                    </th>
+                                    <th class="text__algin-left"
+                                        title="Số chứng minh nhân dân"
+                                        model-name="IdentityNumber">SỐ CMND
+                                    </th>
+                                    <th class="text__algin-left"
+                                        model-name="PositionName">CHỨC DANH
+                                    </th>
+                                    <th class="text__algin-left"
+                                        model-name="DepartmentName">TÊN ĐƠN VỊ
+                                    </th>
+
+                                    <th class="text__align-right"
+                                        model-name="Salary">LƯƠNG</th>
+                                    <th class="text__align-center" model-name=""
+                                        type="editfunction">
+                                        CHỨC NĂNG
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="content__scroll">
+                                <!-- <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </div>
+                                    </td>
+                                    <td class="text__algin-left">00579</td>
+                                    <td class="text__algin-left">Nguyễn Văn Liệt
+                                    </td>
+                                    <td class="text__algin-left">Nam</td>
+                                    <td class="text__algin-center">31/12/1969
+                                    </td>
+                                    <td class="text__algin-left">3625086</td>
+                                    <td class="text__algin-left">Trưởng nhóm
+                                    </td>
+                                    <td class="text__algin-left">Xay keo - phối
+                                        trộn</td>
+                                    <td class="text__algin-left"></td>
+                                    <td class="text__algin-left"></td>
+                                    <td class="text__algin-left"></td>
+                                    <td>
+                                        <div class="edit__function">Sửa
+                                            <div class="edit__arrowdown"
+                                                id="target__edit">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </div>
+                                    </td>
+                                    <td class="text__algin-left">00579</td>
+                                    <td class="text__algin-left">Nguyễn Văn Liệt
+                                    </td>
+                                    <td class="text__algin-left">Nam</td>
+                                    <td class="text__algin-center">31/12/1969
+                                    </td>
+                                    <td class="text__algin-left">3625086</td>
+                                    <td class="text__algin-left">Trưởng nhóm
+                                    </td>
+                                    <td class="text__algin-left">Xay keo - phối
+                                        trộn</td>
+                                    <td class="text__algin-left"></td>
+                                    <td class="text__algin-left"></td>
+                                    <td class="text__algin-left"></td>
+                                    <td>
+                                        <div class="edit__function">
+                                            <button class = "edit__button">Sửa</button>
+                                            <div class="edit__arrowdown"
+                                                id="target__edit">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Content body footer -->
+
+                    <div class="content__body-footer">
+                        <p class="footer__total">Tổng số: <strong>1035</strong>
+                            bản ghi</p>
+                        <div class="footer__paging">
+                            <div class="dropdown" id="d-select">
+                                <div id="dropdown__select">
+                                    <div class="selected">20 bản ghi trên 1
+                                        trang
+                                    </div>
+                                </div>
+                                <ul class="menuDd hide" id="menuDropdown">
+                                    <li class="option">10 bản ghi trên 1 trang
+                                    </li>
+                                    <li class="option">20 bản ghi trên 1 trang
+                                    </li>
+                                    <li class="option">30 bản ghi trên 1 trang
+                                    </li>
+                                    <li class="option">50 bản ghi trên 1 trang
+                                    </li>
+                                    <li class="option">100 bản ghi trên 1 trang
+                                    </li>
+                                </ul>
+                                <div class="bgc-arrowdown" id="active">
+                                    <img id="paging__arrowdown"
+                                        src="/assets/img/downarrow.png"></img>
+                                </div>
+                            </div>
+                            <div class="paging__switch">
+                                <div class="switch__prev">Trước</div>
+                                <div
+                                    class="switch__number switch__number-selected">
+                                    1</div>
+                                <div class="switch__number">2</div>
+                                <div class="switch__number">3</div>
+                                <p class="more_number">...</p>
+                                <div class="switch__number">52</div>
+                                <div class="switch__next">Sau</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu__header">
+                <div class="menu__icon"></div>
+                <img class="menu__logo"
+                    src="/assets/img/Logo_Module_TiengViet_White.66947422.svg"
+                    alt="">
+            </div>
+            <div class="menu__body">
+                <div class="menu__body-item bgc-selected">
+                    <div class="menu__body-logo-item1"></div>
+                    <div class="menu__body-content">Tổng quan</div>
+                </div>
+
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item2"></div>
+                    <div class="menu__body-content">Tiền mặt</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item3"></div>
+                    <div class="menu__body-content">Tiền gửi</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item4"></div>
+                    <div class="menu__body-content">Mua hàng</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item5"></div>
+                    <div class="menu__body-content">Bán hàng</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item6"></div>
+                    <div class="menu__body-content">Quản lý hoá đơn</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item7"></div>
+                    <div class="menu__body-content">Kho</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item8"></div>
+                    <div class="menu__body-content">Công cụ dụng cụ</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item9"></div>
+                    <div class="menu__body-content">Tài sản cố định</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item10"></div>
+                    <div class="menu__body-content">Thuế</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item11"></div>
+                    <div class="menu__body-content">Giá thành</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item12"></div>
+                    <div class="menu__body-content">Tổng hợp</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item13"></div>
+                    <div class="menu__body-content">Ngân sách</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item14"></div>
+                    <div class="menu__body-content">Báo cáo</div>
+                </div>
+                <div class="menu__body-item">
+                    <div class="menu__body-logo-item15"></div>
+                    <div class="menu__body-content">Phân tích tài chính</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loading">
+        <img class="img-loading" src="/assets/loading.svg" alt="">
+    </div>
+    <!-- Thư viện js -->
+
+    <!-- js sử dụng chung -->
+    <script src="/js/dropdown.js"></script>
+    <!-- <script src="/js/main.js"></script> -->
+    <!-- js dành riêng cho từng page -->
+    <script src="/js/employee.js"></script>
+</body>
+
+</html>

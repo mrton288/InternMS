@@ -1,0 +1,27 @@
+.icon-warning {
+    /* position: absolute; */
+    background: url('/assets/img/Sprites.64af8f61.svg') no-repeat -598px -463px;
+    width: 36px;
+    height: 33px;
+}
+
+.toast__icon {
+	background: url('/assets/img/Sprites.64af8f61.svg') no-repeat -1602px -258px;
+	width: 20px;
+	height: 20px;
+}
+
+.toast__icon-warning {
+    width: 24px;
+    height: 24px;
+    background-image: url('/assets/img/warning.png');
+}
+
+.toast__icon-error {
+    position: absolute;
+    top: 14px;
+    width: 24px;
+    height: 24px;
+    background-image: url('/assets/img/error.png') ;
+}
+

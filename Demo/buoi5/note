@@ -1,0 +1,11 @@
+- id : nhiều phần tử cùng id nhưng luôn trả về 1 phần tử
+F8: vào debug chrome
+F10: chạy dòng code
+- var : + khai báo luôn tự động nổi lên đầu hàm - hoisting
+        + phạm vi hoạt động trong toàn function
+- let: + ngược lại
+       + let : phạm vi hoạt động chỉ trong for 
+
+- Không thể khai báo biến mà ko dùng let, var, const
+- change: nhập xong chuyển sang ô khác mới validate
+- trong javascript  

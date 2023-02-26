@@ -1,0 +1,78 @@
+.toast__success {
+    position: relative;
+    width: 450px;
+    height: 56px;
+    background-color: #fff;
+    padding: 18px;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+}
+
+.toast__wraning {
+    position: relative;
+    width: 498px;
+    height: 56px;
+    background-color: #fff;
+    padding: 16px;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+
+}
+
+.toast__error {
+    position: relative;
+    width: 650px;
+    height: 74px;
+    background-color: #fff;
+    padding: 16px;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    display: none;
+
+}
+
+.toast__left {
+    display: flex;
+    align-items: center;
+}
+
+.toast__text {
+    margin-left: 10px;
+    color: #1F1F1F;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.toast__text-error {
+    position: absolute;
+    left: 50px;
+}
+
+.toast__right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.toast__additional {
+    text-decoration: underline;
+    color: #1F1F1F;
+    font-size: 14px;
+    font-weight: 500;
+    font-weight: bold;
+}
+
+.toast__exit {
+	background: url('/assets/img/Sprites.64af8f61.svg') no-repeat -1178px -362px;
+	width: 12px;
+	height: 12px;
+}
+

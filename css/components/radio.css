@@ -1,0 +1,51 @@
+.radio {
+    font-size: 14px;
+    position: relative;
+    display: flex;
+}
+
+label.radio {
+    margin-right: 35px;
+}
+
+.radio + .radio {
+    margin-left: 20px;
+}
+
+.radio input[type="radio"] {
+    display: none;
+}
+
+.radio span{
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: block;
+    position: absolute;
+    left: 30px;
+}
+
+.radio span:after {
+    content: "";
+    height: 12px;
+    width: 12px;
+    background-color: #2CA01C;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: 50ms ease-in-out 0s;  
+}
+
+.radio input[type="radio"]:checked ~ span:after{
+    transform: translate(-50%, -50%) scale(1);
+
+}
+
+/* .radio input[type="tabindex"] {
+    outline: none;
+    border: 1px solid #2CA01C;
+} */

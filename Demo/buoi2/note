@@ -1,0 +1,32 @@
+************position**********
+- position: mac dinh la static
+- Khi su dung cac position khac static co the ap dung voi cac thuoc tinh dieu huong
+- position: absolute an theo vi tri cua cha khi va chi khi cha co position : relative
+- position: fixed => can theo khung trinh duyet VD: co dinh menu, banner quang cao
+- position: stiky => can theo the cha
+- Khi su dung relative : no roi vi tri nhung van de lai khoang trong
+
+******************
+header, div: group selector
+- boxsizing: border-box: ngan chan viec anh huong cua cac yeu to khac
+
+
+
+*******Grid******
+grid-template-rows: x x: quy dinh so hang
+grid-template-columns: y y y
+
+grid-row-start:chon diem bat dau cua o
+grid-row-end: chon diem ket thuc cua o
+
+row-gap: khoang cach giua cac o
+
+
+********flex*****
+flex-shrink: 0 tu dong thay doi khi giam
+flex-grow: 0 tu dong thay doi khi tang
+flex-basis: 100px: co dinh kich thuoc
+flex-direction: đảo phần tử theo trục main-axis: row, row-reverse
+align-self: đảo phần tử theo trục cross-axis
+
+- de su dung algin-content phai su dụng flex-wrap

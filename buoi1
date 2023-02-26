@@ -1,0 +1,9 @@
+- 100vw: tính cả thành croll
+- 100% 
+
++ phần nhỏ text
++ chỉ vẽ block phần to
+
+shift + alt + -> : chọn tên class
+ctrl + shift + --> : chọn tên class (tính theo số từ)
+ctrl + alt + downkey: đặt con trỏ vào các dòng

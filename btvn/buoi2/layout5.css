@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600px;
+    color: black;
+}
+
+.main {
+    display: flex;
+
+}
+
+.main-left {
+    display: flex;
+    flex: 2;
+    height: calc(100vh - 100px);
+    flex-direction: column;
+}
+
+.header {
+    flex: 1;
+    background-color: aqua;
+}
+
+
+.body {
+    flex: 1;
+    background-color: coral;
+}
+
+.menu {
+    flex: 1;
+    background-color: blueviolet;
+}
+
+.footer {
+    height: 100px;
+    background-color: yellow;
+}
+
+

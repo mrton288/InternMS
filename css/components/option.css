@@ -1,0 +1,41 @@
+.edit__option {
+    background-color: #fff;
+    position: absolute;
+    top: 275px;
+    right: -40px;
+    z-index: 4;
+    transform: translate(-100%);
+    transition: opacity .25s,transform .25s,width .3s ease;
+    border: 1px solid #ccc;
+    padding: 2px 1px;
+    white-space: nowrap;
+    min-width: 120px;
+}
+.option__line {
+    background-color: #fff;
+    color: #111;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    list-style: none;
+    /* display: none; */
+}
+
+.option__line:hover {
+    background-color: #e8e9ec;
+    cursor: pointer;
+    color: #2ca01c;
+}
+
+.edit__arrowdown {
+    position: relative;
+    background: url('/assets/img/Sprites.64af8f61.svg') no-repeat -894px -357px;
+	width: 8px;
+	height: 5px;
+    padding: 10px 10px;
+    border: 1px solid transparent;
+}
+
+.edit__arrowdown-border {
+    border: 1px solid #0075c0;
+}

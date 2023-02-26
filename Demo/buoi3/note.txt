@@ -1,0 +1,18 @@
+/* Các dạng selector trong css */
+
+- Có 4 loại combinator:
+ 1. Descendant Selector (Tất cả các con và cháu)
+ Ví dụ: div p { background-color:yellow;}. Tất cả các thẻ p nằm trong thẻ div sẽ có nền màu vàng.
+
+ 2. Child selector (Chỉ có con của nó)
+ Ví dụ: div>p {background-color:yellow;}. Chỉ những thẻ p là con của div đổi màu nền vàng, các cháu
+không bị ảnh hưởng.
+
+ 3. Adjacent Sibling Selector (Phần tử liền kề ngay đằng sau)
+ Ví dụ: div+p { background-color:yellow;}. Thẻ p đầu tiên nằm sau thẻ div sẽ bị ảnh hưởng nền vàng.
+
+ 4. General Sibling Selector (Tất các phần tử liền kề ngay đằng sau)
+ Ví dụ: div~p { background-color:yellow;}. Tất cả những thẻ p nằm sau thẻ div sẽ bị ảnh hưởng nền
+vàng
+
+5. div[id="abc"] {} // thuộc tính

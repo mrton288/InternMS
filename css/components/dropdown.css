@@ -1,0 +1,112 @@
+.dropdown {
+    position: relative;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+#dropdown__select {
+    width: 220px;
+    height: 36px;
+    font-size: 14px;
+    line-height: 34px;
+    border-radius: 2px;     
+    padding-left: 10px;
+    background-color: #fff;
+}
+
+#dropdown__select1 {
+    height: 36px;
+    font-size: 14px;
+    line-height: 34px;
+    border-radius: 2px;     
+    padding-left: 10px;
+    background-color: #fff;
+}
+
+.border__select {
+    border: 1px solid #50b83c !important;
+}
+
+.menuDd {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 25px;
+    border-radius: 2px;    
+    background-color: #fff;
+    padding-left: 0;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    width: 100%;
+}
+
+.menuDd1 {
+    position: absolute;
+    box-sizing: border-box;
+    top: 28px;
+    border-radius: 2px;    
+    background-color: #fff;
+    padding-left: 0;
+    border: 1px solid #ccc;
+    width: 100%;
+    overflow: hidden;
+}
+
+.dropdown ul li {
+    list-style: none;
+    height: 36px;
+    font-size: 14px;
+    line-height: 36px;
+    padding-left: 10px;
+}
+
+.dropdown ul li:hover {
+    background-color: #2D9E1C;
+    color: #fff;
+    cursor: pointer;
+}
+
+.bgc-arrowdown {
+    position: absolute;
+    /* box-sizing: border-box; */
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    right: 0;
+    bottom: 0;
+    /* border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; */
+    /* border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px; */
+}
+
+/* .border__arrow {
+    border-top: 1px solid #50b83c;
+    border-right: 1px solid #50b83c;
+    border-bottom: 1px solid #50b83c;
+} */
+
+.bgc-arrowdown:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+#paging__arrowdown {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+}
+
+#paging__arrowdown1 {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+}
+
+
+.rotate {
+    transform: rotate(180deg);
+}

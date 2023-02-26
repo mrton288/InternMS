@@ -1,0 +1,332 @@
+.content {
+    /* display: flex; */
+    width: 100%;
+    height: calc(100vh - 56px);
+    background-color: #F4F5F7;
+}
+
+.content__header {
+    display: flex;
+    height: 68px;
+    padding: 16px 24px 16px 24px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content__header-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.content__header-add {
+    background-color: #50b83c;
+    padding: 10px 16px 10px 16px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+    line-height: 18px;
+    border: none;
+}
+
+.content__header-add:hover {
+    cursor: pointer;
+    background-color: #57C841;
+}
+
+.content__body {
+    background-color: #fff;
+    height: calc(100vh - 56px - 68px - 12px);
+    width: calc(100vw - 244px);
+    margin:0 24px 12px 24px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 0px 12px;
+}
+
+.content__body-uptable {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: 18px;
+    margin: 12px 16px 18px 12px;
+    right: 0;
+}
+
+.content__body-search {
+    position: relative;
+}
+
+.search-text {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 6px 40px 6px 12px;
+    /* color: #9EA0A5; */
+    min-width: 280px;
+    height: 36px;
+    /* font-style: italic; */
+    font-weight: 500;
+}
+
+.search-text:active {
+    border: 1px solid #4B8343;
+}
+
+.search-icon {
+    position: absolute;
+    right: 9px;
+    top: 7px;
+    background: url('/assets/img/Sprites.64af8f61.svg') no-repeat -956px -31px;
+	width: 20px;
+	height: 20px;
+    cursor: pointer;
+}
+
+.content__body-reload {
+    background: url('/assets/img/Sprites.64af8f61.svg') no-repeat -425px -201px;
+	width: 24px;
+	height: 24px;
+    cursor: pointer;
+}
+
+.content__body-table {
+    display: block;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+/* Độ rộng tối thiểu các cột */
+
+/* The container */
+.checkbox {
+    position: relative;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+}
+ 
+/* Hide the browser's default checkbox */
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    margin: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox input:checked ~ .checkmark {
+    background-color: #50B83C;
+}
+
+/* .checkbox input:checked>td {
+    background-color: #F7F7F7;
+} */
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+  /* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+  /* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+    left: 9px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+table tbody tr:hover {
+    background-color: #EDF8EB;
+    cursor: pointer;
+}
+
+
+tbody tr:hover td:first-child, tbody tr:hover td:last-child {
+    background-color: #EDF8EB;
+}
+
+table {
+    width: 1500px;
+}
+
+/* Đặt thuộc tính cho table và thẻ "tr" */
+table, tr {
+    border-bottom: 1px solid #D6D6D6;
+    border-collapse: collapse;
+    height: 48px;
+}
+
+table, td, th{
+    border-right: 1px solid #D6D6D6;
+    border-collapse: collapse;
+}
+
+/* Bỏ line cho cột cuối cả head và body */
+table,th:last-of-type, td:last-of-type{
+    border-right: none;
+}
+
+table thead tr {
+    background-color: #EDEEF2;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+}
+
+thead th  {
+    padding: 0px 10px;
+}
+
+tbody tr td {
+    padding: 10px;
+}
+
+table thead tr th {
+    position: sticky;
+    top: 0;
+    background-color: #EEE;
+    text-align: left;
+}
+
+table thead tr th:first-child{
+    left: 0;
+    z-index: 2;
+    border-right: none;
+    box-shadow: -0.5px 0px 0px #c7c7c7 inset;
+    width: 46px;
+}
+
+table thead tr th:last-child {
+    right: 0;
+    z-index: 2;
+    border-right: none;
+    box-shadow: 0.5px 0px 0px #c7c7c7 inset;
+}
+
+tbody tr td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #fff;
+    border-right: none;
+    box-shadow: -0.5px 0px 0px #c7c7c7 inset;
+}
+
+tbody tr td:last-child {
+    position: sticky;
+    right: 0;
+    background-color: #fff;
+    border-right: none;
+    box-shadow: 0.5px 0px 0px #c7c7c7 inset;
+}
+
+.edit__function {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+}
+
+.edit__button {
+    color: #639EC8;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Body table - footer */
+
+.content__body-footer {
+    display: flex;
+    justify-content: space-between;
+    min-height: 50px;
+}   
+
+.footer__paging {
+    display: flex;
+    align-items: center;
+}
+
+.paging {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.combobox {
+    height: 36px;
+    font-size: 14px;
+    line-height: 18px;
+    border-radius: 4px;
+    padding: 5px 10px;
+    min-width: 200px;
+    border: none;
+}
+
+.paging__switch {
+    display: flex;
+    flex: 1;
+    height: 24px;
+    align-items: center;
+}
+
+.switch__prev {
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #E2E2E2;
+    border: solid 1px #fff;
+}
+
+.switch__number {
+    padding: 0 5px;
+    cursor: pointer;
+    border: solid 1px #fff;
+}
+
+.switch__number-selected {
+    border: solid 1px #E3E3E3;
+    font-weight: bold;
+}
+
+.switch__number:hover {
+    border: solid 1px #E3E3E3;
+    font-weight: bold;
+}
+
+.more_number {
+    margin: 0 10px 0 20px;
+}
+
+.switch__next {
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #6F6F6F;
+    border: solid 1px #fff;
+}

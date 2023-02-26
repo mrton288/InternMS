@@ -1,0 +1,60 @@
+.btn-yes {
+    position: absolute;
+    width: 79px;
+    height: 36px;
+    background-color: #50B83C;
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 4px;
+    top: 135px;
+    right: 20px;
+    color: #fff;
+    border: none;
+}
+
+.btn__cancel {
+    width: 80px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #fff;
+    border: solid 1px #E0E0E0;
+    cursor: pointer;
+}
+
+.btn__cancel:hover {
+    background-color: #FBFBFB;
+    cursor: pointer;
+}
+
+.btn__store {
+    display: flex;
+    gap: 8px;
+}
+.btn__store-sub {
+    width: 80px;
+    height: 36px;
+    background-color: #fff;
+    border: solid 1px #E0E0E0;
+    color: #212121;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn__store-sub:hover {
+    background-color: #FBFBFB;
+    cursor: pointer;
+}
+
+.btn__store-add {
+    height: 36px;
+    background-color: #50B83C;
+    color: #FFFFFF;
+    border: solid 1px #E0E0E0;
+    padding: 0px 15px;
+    border-radius: 4px;
+}
+
+.btn__store-add:hover {
+    background-color: #5DC748;
+    cursor: pointer;
+}
