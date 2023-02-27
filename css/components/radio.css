@@ -1,15 +1,21 @@
-.radio {
-    font-size: 14px;
-    position: relative;
-    display: flex;
+.popup__gender {
+    height: 36px;
+    align-items: center;
 }
 
-label.radio {
-    margin-right: 35px;
+.radio {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    display: inline-block;
+    position: relative;
+    display: flex;
+    padding-left: 30px;
 }
 
 .radio + .radio {
-    margin-left: 20px;
+    margin-left: 40px;
 }
 
 .radio input[type="radio"] {
@@ -17,19 +23,19 @@ label.radio {
 }
 
 .radio span{
-    height: 24px;
-    width: 24px;
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
     border: 1px solid #ccc;
     display: block;
     position: absolute;
-    left: 30px;
+    left: 0px;
 }
 
 .radio span:after {
     content: "";
-    height: 12px;
-    width: 12px;
+    height: 10px;
+    width: 10px;
     background-color: #2CA01C;
     display: block;
     position: absolute;
@@ -42,10 +48,4 @@ label.radio {
 
 .radio input[type="radio"]:checked ~ span:after{
     transform: translate(-50%, -50%) scale(1);
-
 }
-
-/* .radio input[type="tabindex"] {
-    outline: none;
-    border: 1px solid #2CA01C;
-} */

@@ -38,7 +38,8 @@ class EmployeePage {
                     this.ListEmployee = data;
                     // buil table
                     this.buildTableData(data);
-                    this.initEvents();
+                    this.eventCheckAll();
+                    this.eventCheckLine();
                 });
         } catch (error) {
             console.log(error);
@@ -131,9 +132,9 @@ class EmployeePage {
                 trElement.ondblclick = () => {
                     this.displayEmployeeEditForm(item);
                 };
+                this.showHideMenuFunction();
                 // 4. Đẩy vào table
                 bodyTable.append(trElement);
-
                 // Ẩn loading khi load dữ liệu xong
                 document.querySelector(".loading").style.display = "none";
             }
@@ -185,11 +186,11 @@ class EmployeePage {
         try {
             switch (data) {
                 case 0:
-                    return "Không xác định";
-                case 1:
                     return "Nam";
-                case 2:
+                case 1:
                     return "Nữ";
+                case 2:
+                    return "Không xác định";
                 default:
                     break;
             }
@@ -199,7 +200,7 @@ class EmployeePage {
     }
 
     // Các sự kiện chức năng khác
-    initEvents() {
+    showHideMenuFunction() {
         var k = 0;
         // Show - hidden Menu chức năng
         var editOption = document.getElementById("edit__option");
@@ -228,7 +229,20 @@ class EmployeePage {
                 }
             })
         );
+    }
 
+    eventCheckLine() {
+        var allLine = document.querySelector("table tbody tr td");
+        const allCheckbox = document.querySelectorAll(".checkbox:not(.select-all, .cbOther) input");
+        allCheckbox.forEach((el) => {
+            el.addEventListener("click", function () {
+                el.parentElement.parentElement.classList.toggle("background-line");
+            });
+        });
+    }
+
+    // Hiển thị checked toàn bộ khi checked vào ô ở head
+    eventCheckAll() {
         // Checkbox all
         var allLine = document.querySelectorAll("table tbody tr td");
         const selectAll = document.querySelector(".checkbox.select-all input");
@@ -348,6 +362,18 @@ class EmployeePage {
      */
 }
 
+// Xoá thông tin cũ khi click vào "thêm mới nhân viên"
+function clearInfoEmployee() {
+    document.getElementById("txtEmployeeCode").value = "NV-0001";
+    document.getElementById("txtEmployeeName").value = "";
+    document.getElementById("txtIdentityCard").value = "";
+    document.getElementById("txtPosition").value = "";
+    document.getElementById("txtAddress").value = "";
+    document.getElementById("txtPhoneNumber").value = "";
+    document.getElementById("txtEmail").value = "";
+    document.getElementById("dateOfBirth").value = null;
+}
+
 /**
  * Tạo sự kiện cho các element
  */
@@ -357,14 +383,16 @@ function createEvent() {
         document.querySelector(".content__header-add").addEventListener("click", function () {
             document.getElementById("form__detail").style.display = "block";
             document.querySelector(".popup__title").textContent = "Thông tin nhân viên";
+            clearInfoEmployee();
+            let infoEmployee = document.getElementById("txtEmployeeCode");
+            // Tự động focus vào employeeCode
+            infoEmployee.focus();
+            infoEmployee.select();
         });
 
         // Ẩn form thông tin nhân viên
         document.getElementById("btnCancel").addEventListener("click", function () {
             document.getElementById("form__detail").style.display = "none";
-            // Tự động focus vào employeeCode
-            //     infoEmplooyee.focus();
-            //     infoEmplooyee.select();
         });
 
         document.querySelectorAll(".input--required").forEach((el) => {

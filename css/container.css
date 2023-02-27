@@ -188,6 +188,10 @@ select::-ms-expand {
     display: none;
 }
 
+.background-line {
+    background-color: #EDF8EB;
+}
+
 .text__align-right {
     text-align: right;
     margin-right: 10px;
