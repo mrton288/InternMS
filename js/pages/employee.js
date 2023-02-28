@@ -1,3 +1,5 @@
+import Combobox from "../../lib/ncombobox.js";
+
 var test; // Biến để lưu giá trị ngày sinh đẩy ra global
 const messageError = [
     {
@@ -17,6 +19,7 @@ const messageError = [
 window.onload = function () {
     createEvent();
     new EmployeePage();
+    new Combobox();
 };
 
 class EmployeePage {

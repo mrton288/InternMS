@@ -1,26 +1,26 @@
 //#region Dropdown Phòng ban
-var dropdownSelect1 = document.getElementById("dropdown__select1");
-var menuDropdown1 = document.getElementById("menuDropdown1");
-var pagingArrow1 = document.getElementById("paging__arrowdown1");
-var active1 = document.getElementById("active1");
-var options1 = document.getElementsByClassName("option1");
+// var dropdownSelect1 = document.getElementById("txtDepartment");
+// var menuDropdown1 = document.getElementById("menuDropdown1");
+// var pagingArrow1 = document.getElementById("paging__arrowdown1");
+// var active1 = document.getElementById("active1");
+// var options1 = document.getElementsByClassName("option1");
 
-// Thực hiện các sự kiện thay đổi khi click vào phần mũi tên trong ô input
-active1.onclick = function () {
-    menuDropdown1.classList.toggle("hide");
-    pagingArrow1.classList.toggle("rotate");
-    active1.classList.toggle("border__arrow");
-};
+// // Thực hiện các sự kiện thay đổi khi click vào phần mũi tên trong ô input
+// active1.onclick = function () {
+//     menuDropdown1.classList.toggle("hide");
+//     pagingArrow1.classList.toggle("rotate");
+//     active1.classList.toggle("border__arrow");
+// };
 
-// Thực hiện các thay đổi khi click vào 1 thành phần
-for (const opt of options1) {
-    opt.onclick = function () {
-        // Thay đổi text ở dropdown select
-        dropdownSelect1.innerText = this.textContent;
-        menuDropdown1.classList.toggle("hide");
-        pagingArrow1.classList.toggle("rotate");
-    };
-}
+// // Thực hiện các thay đổi khi click vào 1 thành phần
+// for (const opt of options1) {
+//     opt.onclick = function () {
+//         // Thay đổi text ở dropdown select
+//         dropdownSelect1.innerText = this.textContent;
+//         menuDropdown1.classList.toggle("hide");
+//         pagingArrow1.classList.toggle("rotate");
+//     };
+// }
 
 //#endregion
 
